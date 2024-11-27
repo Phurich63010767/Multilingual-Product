@@ -16,9 +16,14 @@ Back-end Questions :
 • รายงานผลและปรับปรุง -> สร้างรายงานสรุปผลการทดสอบ, เสนอแผนการปรับปรุงและทดสอบซ้ำในรอบถัดไป
 
 3.คือตัวโปรเจคนี้
-• Validation: 
-• Database Design:
+• Validation: ใช้ class-validator และ class-transformer
+• Database Design: สร้าง table 2 table คือ products (table หลัก) และ product_translations (table สำหรับgเก็บข้อมูลหลายภาษา)
+  โดยเมื่อมีการเพิ่ม product ขึ้นใหม่จะสร้างเลข id ขึ้นเองเป็น PK ใน table หลักและสร้างข้อมูลขึ้น 2 row ใน product_translations (เพราะ product ละ 2 ภาษา)
+  โดยใน product_translations แต่ละ row จะมี id ที่ไม่ซ้ำกันเป็น PK และมี FK เป็น id ของ product ใน table หลัก (ใน 2 row ที่เกิดขึ้นจาก product เดียวกันจะมี FK เหมือนกัน)
 • Testing Strategy: 
+   - Unit Test: ใช้ Jest ทดสอบ Service และฟังก์ชันเฉพาะ เช่น findAll โดย Mock Repository เพื่อแยกการทำงานของ Business Logic ออกจาก Database
+   - Integration Test: ทดสอบ Controller เพื่อให้มั่นใจว่าการเชื่อมต่อกับ Service และการจัดการ Request/Response ทำงานได้ถูกต้อง
+   - End-to-End Test: ใช้ Postman หรือ Supertest ทดสอบ API ที่เชื่อมต่อกับ Database จริง เพื่อดูว่าข้อมูลที่ส่งกลับมาถูกต้องและครบถ้วน
 
 React Questions :
 1. useCallback ใช้ทําอะไร
