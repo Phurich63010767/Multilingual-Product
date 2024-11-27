@@ -1,0 +1,25 @@
+Back-end Questions :
+1.
+• Backend: ใช้ NestJS สร้าง Aggregator API
+   Endpoint: /api/products/aggregated-data
+   ดึงข้อมูลจาก Customer API, Master Data API, และ Transaction Data API ผ่าน HTTP Service
+   รวมข้อมูล (data aggregation) และจัดส่งข้อมูลรวมในรูปแบบ JSON
+• Database: ใช้ PostgreSQL สำหรับ Materialized View หรือ Query Optimization เพื่อปรับปรุง Latency
+• Real-Time: ใช้ WebSocket Gateway ของ NestJS หากต้องการอัปเดตข้อมูลแบบเรียลไทม์
+
+2.
+• กำหนดเป้าหมายและขอบเขต -> ระบุวัตถุประสงค์การทดสอบ, ฟีเจอร์หลัก หรือ จุดสำคัญ ที่ต้องทดสอบ
+• เลือกเครื่องมือทดสอบ -> เช่น ใช้ JMeter หรือ k6 สำหรับ API/Backend
+• สร้าง Test Scenarios -> Load Testing, Stress Testing, Endurance Testing
+• เตรียม Test Environment -> ใช้ Environment ที่ใกล้เคียง Production มากที่สุด, สร้าง Mock Data ให้เหมือนข้อมูลจริง
+• วัดและวิเคราะห์ผลลัพธ์ -> ใช้ Metric เช่น Response Time, Error Rate, CPU/Memory Usage
+• รายงานผลและปรับปรุง -> สร้างรายงานสรุปผลการทดสอบ, เสนอแผนการปรับปรุงและทดสอบซ้ำในรอบถัดไป
+
+3.คือตัวโปรเจคนี้
+• Validation: 
+• Database Design:
+• Testing Strategy: 
+
+React Questions :
+1. useCallback ใช้ทําอะไร
+2.
