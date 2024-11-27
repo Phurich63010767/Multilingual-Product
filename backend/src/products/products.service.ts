@@ -20,12 +20,15 @@ export class ProductsService {
     return this.productRepository.find({ relations: ['translations'] });
   }
 
-  async searchByName(query: string, language: string): Promise<Product[]> {
-    return this.productRepository
-      .createQueryBuilder('product')
+  async searchByName(query: string, language?: string) {
+    const qb = this.productRepository.createQueryBuilder('product')
       .leftJoinAndSelect('product.translations', 'translation')
-      .where('translation.language = :language', { language })
-      .andWhere('translation.name ILIKE :query', { query: `%${query}%` })
-      .getMany();
-  }
+      .where('translation.name ILIKE :query', { query: `%${query}%` }); 
+  
+    if (language) {
+      qb.andWhere('translation.language = :language', { language }); 
+    }
+  
+    return qb.getMany();
+  }  
 }

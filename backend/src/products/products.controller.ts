@@ -18,7 +18,7 @@ export class ProductsController {
   @Get('search')
   search(
     @Query('q') query: string,
-    @Query('lang') language: string,
+    @Query('lang') language?: string,
   ) {
     return this.productsService.searchByName(query, language);
   }
