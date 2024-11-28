@@ -26,5 +26,6 @@ Back-end Questions :
    - End-to-End Test: ใช้ Postman หรือ Supertest ทดสอบ API ที่เชื่อมต่อกับ Database จริง เพื่อดูว่าข้อมูลที่ส่งกลับมาถูกต้องและครบถ้วน
 
 React Questions :
-1. useCallback ใช้ทําอะไร
-2.
+1. useCallback ใช้ทําอะไร -> เป็น Hook ที่ใช้เพื่อสร้างและเก็บฟังก์ชันแบบเมมโมไรซ์ (memoized function) เพื่อลดการสร้างฟังก์ชันใหม่ในทุกการ Render ของคอมโพเนนต์ 
+   ซึ่งช่วยปรับปรุงประสิทธิภาพในบางสถานการณ์ เช่น การส่งฟังก์ชันไปยัง Props ของ Child Component ที่เมมโมไรซ์อยู่
+2. อยู่ใน folder frontend -> src -> UserProfile (ไม่ได้มีความเกี่ยวข้องกับโปรเจคหลัก)
